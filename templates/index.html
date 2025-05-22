@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickselect Median Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quickselect Median Finder</h1>
+        <form method="POST">
+            <label for="numbers">Enter numbers (comma separated):</label>
+            <input type="text" id="numbers" name="numbers" required>
+            <button type="submit">Calculate Median</button>
+        </form>
+
+        {% if median_recursive is not none %}
+        <div class="result">
+            <p><strong>Median (Recursive):</strong> {{ median_recursive }}</p>
+            <p><strong>Median (Non-Recursive):</strong> {{ median_non_recursive }}</p>
+            <p><strong>Sorted Array:</strong> {{ sorted_arr }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
